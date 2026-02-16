@@ -140,9 +140,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        if(winController !=  null)
-            winController.InitializeTotalQuestions(questionList.Count);
-        
+
         rb = GetComponent<Rigidbody>();
 
         // Ground boundaries
@@ -166,6 +164,8 @@ public class PlayerController : MonoBehaviour
 
         // Initialize score UI
         scoreText.text = "Score: 0 / " + questionList.Count;
+        winController.InitializeTotalQuestions(questionList.Count);
+
     }
 
     void FixedUpdate()
